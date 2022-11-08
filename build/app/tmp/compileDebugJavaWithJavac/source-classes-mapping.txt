@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+musicenergy/com/MainActivity.java
+ musicenergy.com.MainActivity
+musicenergy/com/BuildConfig.java
+ musicenergy.com.BuildConfig

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>642657405044-qhrga86fin9a2jfu78po4rore1n4bajp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.642657405044-qhrga86fin9a2jfu78po4rore1n4bajp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD78UC0yi1NOBlfPAMnX8imLm-iw_Z8qOs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>642657405044</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>musicenergy.com</string>
+	<key>PROJECT_ID</key>
+	<string>musicenergy-f0ca5</string>
+	<key>STORAGE_BUCKET</key>
+	<string>musicenergy-f0ca5.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:642657405044:ios:1ea069a0cf4b81ddfb2921</string>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">642657405044-rnnn1deapv7oe06qlockto6al78kspr7.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">642657405044</string>
+    <string name="google_api_key" translatable="false">AIzaSyCMDnvk8Utp3_p6GyaXYEVo4XbIDsDGuwA</string>
+    <string name="google_app_id" translatable="false">1:642657405044:android:e84c3b65989b23c6fb2921</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCMDnvk8Utp3_p6GyaXYEVo4XbIDsDGuwA</string>
+    <string name="google_storage_bucket" translatable="false">musicenergy-f0ca5.appspot.com</string>
+    <string name="project_id" translatable="false">musicenergy-f0ca5</string>
+</resources>

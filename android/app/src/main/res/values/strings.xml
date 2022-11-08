@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">musicEnergy</string>
+<string name="facebook_app_id">621313782786961</string>
+    <string name="facebook_client_token">e6e2650da910c488176efdfcff62831c</string>
+<string name="fb_login_protocol_scheme">fb621313782786961</string>
+    </resources>

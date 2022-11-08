@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "642657405044",
+    "project_id": "musicenergy-f0ca5",
+    "storage_bucket": "musicenergy-f0ca5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642657405044:android:e84c3b65989b23c6fb2921",
+        "android_client_info": {
+          "package_name": "musicenergy.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642657405044-rnnn1deapv7oe06qlockto6al78kspr7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMDnvk8Utp3_p6GyaXYEVo4XbIDsDGuwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642657405044-rnnn1deapv7oe06qlockto6al78kspr7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

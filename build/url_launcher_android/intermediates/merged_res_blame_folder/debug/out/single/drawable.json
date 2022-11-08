@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/diegosalvati/AndroidStudioProjects/musicAura/build/url_launcher_android/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/Users/diegosalvati/.gradle/caches/transforms-2/files-2.1/66b89ba21ecb3d35cf4bcf359cd1da6d/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/diegosalvati/AndroidStudioProjects/musicAura/build/url_launcher_android/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/Users/diegosalvati/.gradle/caches/transforms-2/files-2.1/66b89ba21ecb3d35cf4bcf359cd1da6d/core-1.6.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/diegosalvati/AndroidStudioProjects/musicAura/build/url_launcher_android/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/Users/diegosalvati/.gradle/caches/transforms-2/files-2.1/66b89ba21ecb3d35cf4bcf359cd1da6d/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/diegosalvati/AndroidStudioProjects/musicAura/build/url_launcher_android/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/Users/diegosalvati/.gradle/caches/transforms-2/files-2.1/66b89ba21ecb3d35cf4bcf359cd1da6d/core-1.6.0/res/drawable/notification_bg.xml"
+    }
+]
