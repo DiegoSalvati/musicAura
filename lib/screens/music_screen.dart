@@ -88,9 +88,7 @@ class _MusicScreenState extends State<MusicScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: MainDrawer(
-        onTap: () {},
-      ),
+      endDrawer: MainDrawer(),
       backgroundColor: AppColors.lightPink,
       appBar: AppBar(
         shadowColor: AppColors.lightPink,
@@ -260,19 +258,36 @@ class _MusicScreenState extends State<MusicScreen> {
 }
 
 class MainDrawer extends StatefulWidget {
-  final Function()? onTap;
-
-  MainDrawer({required this.onTap});
-
   @override
   State<MainDrawer> createState() => _MainDrawerState();
 }
 
 class _MainDrawerState extends State<MainDrawer> {
   final googleSignIn = GoogleSignIn();
-  final user = FirebaseAuth.instance.currentUser!;
   Map<String, dynamic>? _userData;
   AccessToken? _accessToken;
+  bool _checking = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _checkIfIsLoggedIn();
+  }
+
+  _checkIfIsLoggedIn() async {
+    final accessToken = await FacebookAuth.instance.accessToken;
+    setState(() {
+      _checking = false;
+    });
+    if (accessToken != null) {
+      print(accessToken.toJson());
+      final userData = await FacebookAuth.instance.getUserData();
+      _accessToken = accessToken;
+      setState(() {
+        _userData = userData;
+      });
+    }
+  }
 
   Future logout() async {
     await googleSignIn.disconnect();
@@ -289,43 +304,64 @@ class _MainDrawerState extends State<MainDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          Container(
-            height: 95,
-            width: double.infinity,
-            padding: EdgeInsets.all(25),
-            color: AppColors.lightPink,
-            alignment: Alignment.centerLeft,
-            child: Row(children: [
-              CircleAvatar(
-                radius: 25,
-                backgroundImage: NetworkImage(user.photoURL!),
-              ),
+      child: Column(children: [
+        Container(
+          height: 95,
+          width: double.infinity,
+          padding: EdgeInsets.all(25),
+          color: AppColors.lightPink,
+          alignment: Alignment.centerLeft,
+          child: Row(
+            children: [
+              _userData != null
+                  ? CircleAvatar(
+                      radius: 25,
+                      backgroundImage:
+                          NetworkImage(_userData!['picture']['data']['url']),
+                    )
+                  : CircleAvatar(
+                      radius: 25,
+                      backgroundImage: NetworkImage(
+                          FirebaseAuth.instance.currentUser!.photoURL!),
+                    ),
               SizedBox(
                 width: 12,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    user.displayName!,
-                    style: (TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.black)),
-                  ),
-                  Text(
-                    user.email!,
-                  ),
+                  _userData != null
+                      ? Text(
+                          '${_userData!['name']}',
+                          style: (TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.black)),
+                        )
+                      : Text(
+                          FirebaseAuth.instance.currentUser!.displayName!,
+                          style: (TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Colors.black)),
+                        ),
+                  _userData != null
+                      ? Text(
+                          '${_userData!['email']}',
+                        )
+                      : Text(
+                          FirebaseAuth.instance.currentUser!.email!,
+                        ),
                 ],
               ),
-            ]),
+              SizedBox(
+                height: 10,
+              ),
+            ],
           ),
-          SizedBox(
-            height: 10,
-          ),
-          ListTile(
+        ),
+        Expanded(
+          child: ListTile(
             leading: Icon(
               Icons.exit_to_app,
             ),
@@ -342,8 +378,8 @@ class _MainDrawerState extends State<MainDrawer> {
               _logOut();
             },
           ),
-        ],
-      ),
+        ),
+      ]),
     );
   }
 }

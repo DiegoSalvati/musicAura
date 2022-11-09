@@ -57,90 +57,66 @@ class _AuthScreenState extends State<AuthScreen> {
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.lightPink,
       body: SingleChildScrollView(
-        child: Column(children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(80),
-                bottomLeft: Radius.circular(80),
-              ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Image.asset('images/logo_animated.gif'),
+              height: 520,
+              width: 400,
             ),
-            margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
-            height: 500,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Image.asset('images/logo_animated.gif'),
-                    height: 400,
-                    width: 350,
-                  ),
-                ],
-              ),
+            SizedBox(
+              height: 5,
             ),
-          ),
-          LoginSocialButton(
-            onPressed: () async {
-              FacebookAuth.instance.login(
-                  permissions: ["public_profile", "email"]).then((value) {
-                FacebookAuth.instance.getUserData().then((userData) async {
-                  setState(() {
-                    _isLoggedIn = true;
-                    _userObj = userData;
-                    Navigator.pushNamed(context, MusicScreen.routeName);
-                  });
-                });
-              });
-            },
-            title: ' | Sign in with Facebook',
-            colour: Colors.blueAccent,
-            icon: Icon(
-              FontAwesomeIcons.facebookF,
-              color: Colors.white,
-              size: 15.0,
-            ),
-          ),
-          SizedBox(
-            height: 3,
-          ),
-          LoginSocialButton(
-            onPressed: () async {
-              await FirebaseServices().signInWithGoogle();
-              Navigator.pushNamed(context, MusicScreen.routeName);
-            },
-            colour: Colors.orangeAccent,
-            title: ' | Sign in with Google',
-            icon: Icon(
-              FontAwesomeIcons.google,
-              color: Colors.white,
-              size: 15.0,
-            ),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Container(
-            margin: EdgeInsets.only(top: 10),
-            child: Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Don\'t have an account?'),
-                GestureDetector(
-                  onTap: () =>
-                      Navigator.pushNamed(context, MusicScreen.routeName),
-                  child: Text(
-                    '  Continue as a guest',
-                    style: TextStyle(
-                      color: AppColors.midBlue,
-                    ),
-                  ),
-                ),
+                Text(
+                  'Listen to Music, Heal Yourself',
+                  style: TextStyle(fontSize: 20, color: AppColors.Violet),
+                )
               ],
             ),
-          ),
-        ]),
+            SizedBox(height: 25),
+            LoginSocialButton(
+              onPressed: () async {
+                FacebookAuth.instance.login(
+                    permissions: ["public_profile", "email"]).then((value) {
+                  FacebookAuth.instance.getUserData().then((userData) async {
+                    setState(() {
+                      _isLoggedIn = true;
+                      _userObj = userData;
+                      Navigator.pushNamed(context, MusicScreen.routeName);
+                    });
+                  });
+                });
+              },
+              title: ' | Sign in with Facebook',
+              colour: Colors.blueAccent,
+              icon: Icon(
+                FontAwesomeIcons.facebookF,
+                color: Colors.white,
+                size: 15.0,
+              ),
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            LoginSocialButton(
+              onPressed: () async {
+                await FirebaseServices().signInWithGoogle();
+                Navigator.pushNamed(context, MusicScreen.routeName);
+              },
+              colour: Colors.orangeAccent,
+              title: ' | Sign in with Google',
+              icon: Icon(
+                FontAwesomeIcons.google,
+                color: Colors.white,
+                size: 15.0,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
